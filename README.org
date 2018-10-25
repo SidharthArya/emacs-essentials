@@ -1,15 +1,19 @@
 #+TITLE: Essentials Emacs
 #+AUTHOR: Sidharth Arya 
+#+OPTIONS: toc:nil
 
 This are just some basic tweaky functions which I find useful. Please don't just use this package. Read through it's functions. They are pretty simple, straightforward and useful. Maybe helpful if you are just beginning to use emacs. Also use ~C-h v~ describe variable and ~C-h f~ describe function to get the gist of certain functions.
 Think about this package as a basic tutorial of elisp.
 
+#+TOC: headlines 0
+
 * Basic Usage
-Just put this directly into you emacs config file
+Just put this directly into you emacs config file.
 #+BEGIN_SRC emacs-lisp
 (load "path to essential.el")
 (require 'essential)
 #+END_SRC
+replace *path to essential.el* as the actual path.
 
 ** Dynamic Font Size Manipulation
 #+BEGIN_SRC emacs-lisp
@@ -24,4 +28,19 @@ Just put this directly into you emacs config file
 Try messing with numbers here.
 #+BEGIN_SRC emacs-lisp
 (setq tab-width 100)
+#+END_SRC
+** Dictionary Implementation
+Although this is not a real dictionary. But elisp lists are very powerful.
+Use this code for instance:
+
+#+BEGIN_SRC emacs-lisp
+(find-from-dict '(("Something" "Cool") ("Nothing" "Okay")) "Something")
+$+END_SRC
+The output would be "Cool". What this function is doing is finding "Something" in the list, and then displaying the second member of the list where "Something" is found.
+Go through the source of this function.
+#+BEGIN_SRC emacs-lisp
+(defun find-from-dict(list option)
+  "Allows to use list of list as a dictionary."
+  (nth 1 (nth (position option list :test (lambda (a b) (member a b))) list))
+  )
 #+END_SRC

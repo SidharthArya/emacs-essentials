@@ -36,6 +36,10 @@
     (global-whitespace-mode 1))
   )
   
+(defun find-from-dict(list option)
+  "Allows to use list of list as a dictionary."
+  (nth 1 (nth (position option list :test (lambda (a b) (member a b))) list))
+  )
     
     
     
