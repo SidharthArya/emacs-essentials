@@ -5,7 +5,7 @@
 This are just some basic tweaky functions which I find useful. Please don't just use this package. Read through it's functions. They are pretty simple, straightforward and useful. Maybe helpful if you are just beginning to use emacs. Also use ~C-h v~ describe variable and ~C-h f~ describe function to get the gist of certain functions.
 Think about this package as a basic tutorial of elisp.
 
-#+TOC: headlines 0
+#+TOC: headlines 1
 
 * Basic Usage
 Just put this directly into you emacs config file.

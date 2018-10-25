@@ -4,6 +4,10 @@ Think about this package as a basic tutorial of elisp.
 
 # Table of Contents
 
+1.  [Basic Usage](#orgf10d169)
+
+
+<a id="orgf10d169"></a>
 
 # Basic Usage
 
