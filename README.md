@@ -4,10 +4,10 @@ Think about this package as a basic tutorial of elisp.
 
 # Table of Contents
 
-1.  [Basic Usage](#orgf10d169)
+1.  [Basic Usage](#org9a88246)
 
 
-<a id="orgf10d169"></a>
+<a id="org9a88246"></a>
 
 # Basic Usage
 
@@ -43,10 +43,10 @@ Although this is not a real dictionary. But elisp lists are very powerful.
 Use this code for instance:
 
     (find-from-dict '(("Something" "Cool") ("Nothing" "Okay")) "Something")
-    $+END_SRC
-    The output would be "Cool". What this function is doing is finding "Something" in the list, and then displaying the second member of the list where "Something" is found.
-    Go through the source of this function.
-    #+BEGIN_SRC emacs-lisp
+
+The output would be "Cool". What this function is doing is finding "Something" in the list, and then displaying the second member of the list where "Something" is found.
+Go through the source of this function.
+
     (defun find-from-dict(list option)
       "Allows to use list of list as a dictionary."
       (nth 1 (nth (position option list :test (lambda (a b) (member a b))) list))
